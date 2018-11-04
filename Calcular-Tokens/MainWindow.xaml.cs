@@ -54,13 +54,24 @@ namespace Calcular_Tokens
 
             public static Result TryParse(string line)
             {
+
+
                 var result = new Result();
                 var f = new Fraction();
+
                 var tokens = line.Split(new string[] { SEPERATOR },
                     StringSplitOptions.RemoveEmptyEntries)
                     .Select(token => token.Trim())
                     .ToArray();
 
+                if (line.Contains("/") == false)
+                {
+                    f.Numerator = int.Parse(tokens[0]);
+                    result.Data = f;
+                    return result;
+                }
+
+                 
                 try
                 {
                     int num = int.Parse(tokens[0]);
@@ -86,8 +97,8 @@ namespace Calcular_Tokens
 
             public override string ToString()
             {
-                if(Numerator%Denominator==0)
-                    return $"{ Numerator/Denominator}";
+                if (Numerator % Denominator == 0)
+                    return $"{ Numerator / Denominator}";
 
 
                 int max = Denominator > Numerator ? Denominator : Numerator;
@@ -204,9 +215,6 @@ namespace Calcular_Tokens
                 lblExpression.Content = express.ToString();
             }
         }
-
-
-
     }
 }
 
