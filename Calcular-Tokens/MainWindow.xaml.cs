@@ -86,6 +86,10 @@ namespace Calcular_Tokens
 
             public override string ToString()
             {
+                if(Numerator%Denominator==0)
+                    return $"{ Numerator/Denominator}";
+
+
                 int max = Denominator > Numerator ? Denominator : Numerator;
                 int min = Denominator + Numerator - max;
 
