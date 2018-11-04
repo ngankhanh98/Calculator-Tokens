@@ -13,7 +13,7 @@
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txtInOut" Grid.Row="1" HorizontalAlignment="Center" Height="45" TextWrapping="Wrap" VerticalAlignment="Center" Width="437" Margin="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="30" AcceptsReturn="True" />
+        <TextBox x:Name="txtInOut" Grid.Row="1" HorizontalAlignment="Center" Height="45" TextWrapping="Wrap" VerticalAlignment="Center" Width="437" Margin="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="30" AcceptsReturn="True" PreviewKeyDown="EnterClicked" />
         <Label x:Name="lblExpression" Grid.Row="0" Content="" HorizontalAlignment="Left" Margin="28,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.353" Width="436" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="16" Foreground="#FFB0ABAB"/>
         <Button x:Name="btnSolve" Content="=" HorizontalAlignment="Center" Margin="382,29,28,34" Grid.Row="2" VerticalAlignment="Center" Width="82" Height="38" FontFamily="Arial" FontSize="30" Background="#FF4280EE" BorderBrush="{x:Null}" Foreground="White" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Click="btnSolve_Click"/>
 

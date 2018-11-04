@@ -215,6 +215,15 @@ namespace Calcular_Tokens
                 lblExpression.Content = express.ToString();
             }
         }
+
+        private void EnterClicked(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                btnSolve_Click(sender, e);
+                e.Handled = true;
+            }
+        }
     }
 }
 
