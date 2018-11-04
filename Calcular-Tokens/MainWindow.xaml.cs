@@ -184,11 +184,15 @@ namespace Calcular_Tokens
 
                 foreach (var i in tokens)
                 {
-                    a = Fraction.TryParse(i);
-                    result = result + a;
-                    express = express + a.Data.ToString();
-                    if (i != tokens.Last())
-                        express = express + " + ";
+                    if (i != "")
+                    {
+                        a = Fraction.TryParse(i);
+                        result = result + a;
+                        if (a.Data.ToString() != "0")
+                            express = express + a.Data.ToString();
+                        if (i != tokens.Last())
+                            express = express + " + ";
+                    }
                 }
 
                 if (result.IsSuccessful)
@@ -205,10 +209,13 @@ namespace Calcular_Tokens
 
                 foreach (var i in tokens)
                 {
-                    sum = sum + int.Parse(i);
-                    express = express + i;
-                    if (i != tokens.Last())
-                        express = express + " + ";
+                    if (i != "")
+                    {
+                        sum = sum + int.Parse(i);
+                        express = express + i;
+                        if (i != tokens.Last())
+                            express = express + " + ";
+                    }
                 }
 
                 txtInOut.Text = sum.ToString();
